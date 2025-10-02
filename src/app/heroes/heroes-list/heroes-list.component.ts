@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Heroes } from '../heroes';
+
 
 @Component({
   selector: 'app-heroes-list',
@@ -7,9 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HeroesListComponent {
 
-heroes:any[]=[
+listFilter:string='';
+muestraImg:boolean=true;
+showImage(){
+  this.muestraImg=!this.muestraImg;
+}
+
+heroes:Heroes[]=[
   {
-    "imagen":"https://dragonball-api.com/characters/goku_normal.webp",
+    imagen:"https://dragonball-api.com/characters/goku_normal.webp",
     nombre: "goku",
     descripcion :"kakaroto",
     race:"Saiyan",
@@ -17,21 +25,21 @@ heroes:any[]=[
   },
 
   {
-    "imagen":"https://dragonball-api.com/characters/vegeta_normal.webp",
+    imagen:"https://dragonball-api.com/characters/vegeta_normal.webp",
     nombre: "Vegeta",
     descripcion :"Principe de los Saiyan",
     race:"Saiyan",
     ki:8500
   },
   {
-    "imagen":"https://dragonball-api.com/characters/picolo_normal.webp",
+    imagen:"https://dragonball-api.com/characters/picolo_normal.webp",
     nombre: "Piccolo",
     descripcion :"Guerrero Namekiano",
     race:"Namekiano",
     ki:700
   },
   {
-    "imagen":"https://dragonball-api.com/characters/Freezer.webp",
+    imagen:"https://dragonball-api.com/characters/Freezer.webp",
     nombre: "Freezer",
     descripcion :"Tirano del Universo",
     race:"Alien",

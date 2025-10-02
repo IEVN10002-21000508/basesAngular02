@@ -1,0 +1,65 @@
+<div style="padding: 20px;">
+  <h2 style="text-align:center;">Calculadora de Resistencias</h2>
+  <div style="width: min-content; margin: auto; display: inline;">
+
+  <div style="display: inline-block; margin: 40px;">
+  <h4>1ra Banda</h4>
+  <div *ngFor="let c of bandaColores">
+    <label [style.background]="c.colorHex" style="padding:5px; display:block; color:black;">
+      <input type="radio" name="b1" [value]="c.nombre" (change)="seleccionarColor('banda1', c)"> {{c.nombre}}
+    </label>
+  </div>
+  </div>
+
+   <div style="display: inline-block; margin: 40px;">
+  <h4>2da Banda</h4>
+  <div *ngFor="let c of bandaColores">
+    <label [style.background]="c.colorHex" style="padding:5px; display:block; color:black;">
+      <input type="radio" name="b2" [value]="c.nombre" (change)="seleccionarColor('banda2', c)"> {{c.nombre}}
+    </label>
+  </div>
+  </div>
+
+  <div style="display: inline-block; margin: 40px;">
+  <h4>3ra Banda (Multiplicador)</h4>
+  <div *ngFor="let c of bandaColores">
+    <label [style.background]="c.colorHex" style="padding:5px; display:block; color:black;">
+      <input type="radio" name="b3" [value]="c.nombre" (change)="seleccionarColor('banda3', c)"> {{c.nombre}}
+    </label>
+  </div>
+  </div>
+
+  <div style="width: min-content; margin: 40px;">
+  <h4>Tolerancia</h4>
+  <div *ngFor="let t of tolerancias">
+    <label [style.background]="t.colorHex" style="padding:5px; display:block; color:black;">
+      <input type="radio" name="tol" [value]="t.nombre" (change)="seleccionarColor('tol', t)"> {{t.nombre}}
+    </label>
+  </div>
+  </div>
+
+
+  <div style="margin: 40px;">
+  <button (click)="calcular()" style="margin-top:20px;">Calcular</button>
+
+  <table border="1" style="margin-top:20px; width:100%; text-align:center;">
+  <tr>
+    <th>Color1</th>
+    <th>Color2</th>
+    <th>Color3</th>
+    <th>Tolerancia</th>
+    <th>Valor</th>
+    <th>Valor Máximo </th>
+    <th>Valor Mínimo</th>
+  </tr>
+  <tr *ngIf="mostrarResultado">
+    <td [style.background]="banda1.colorHex">{{banda1.nombre}}</td>
+    <td [style.background]="banda2.colorHex">{{banda2.nombre}}</td>
+    <td [style.background]="banda3.colorHex">{{banda3.nombre}}</td>
+    <td [style.background]="tol.colorHex">{{tol.nombre}}</td>
+    <td>{{valor | number}}</td>
+    <td>{{valorMax | number}}</td>
+    <td>{{valorMin | number}}</td>
+  </tr>
+</table>
+

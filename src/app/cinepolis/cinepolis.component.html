@@ -1,0 +1,53 @@
+
+
+<div style="background-image: url('cinepolis.jpg'); background-size: cover; padding: 10px; min-height: 100vh;">
+    <div style="background-color: rgb(10, 10, 179); max-width: 550px; margin: 0 auto; padding: 10px; border: 1px solid gray;">
+
+        <p style="text-align: center; font-weight: bold; margin-bottom: 10px; color: yellow;">Cinepolis</p>
+
+        <div style="display: flex; justify-content: space-between;">
+
+            <div style="width: 45%;">
+                <p style="font-weight: bold; margin-bottom: 8px; color: white;">Entradas</p>
+
+                <div style="margin-bottom: 5px;">
+                    <label style="color: white;">Nombre</label>
+                    <input type="text" [(ngModel)]="nombre" name="nombre" style="width: 100%;">
+                </div>
+
+                <div style="margin-bottom: 5px;">
+                    <label style="color: white;">Cantidad Compradores</label>
+                    <input type="number" [(ngModel)]="cantidadpersonas" name="cantidadpersonas" min="1" style="width: 100%;">
+                </div>
+
+                <div style="margin-bottom: 5px;">
+                    <label style="display: block; color: white;">Tarjeta Cineco</label>
+                    <input type="radio" name="opcion" [(ngModel)]="opcion" value="si">
+                    <label style="margin-right: 10px; color: white;">Sí</label>
+                    <input type="radio" name="opcion" [(ngModel)]="opcion" value="no">
+                    <label style="color: white">No</label>
+                </div>
+
+                <div style="margin-bottom: 5px;">
+                    <label style="color: white;">Cantidad De Boletas</label>
+                    <input type="number" [(ngModel)]="cantidadboletos" name="cantidadboletos" min="1" style="width: 100%;">
+                </div>
+            </div>
+
+            <div style="width: 45%; padding-left: 10px; border-left: 1px solid #eee;">
+                <p style="font-weight: bold; margin-bottom: 8px; color: white;">Salidas</p>
+
+                <div style="margin-bottom: 10px;">
+                    <label style="display: block; color: white;">Valor a Pagar</label>
+                    <span style="font-weight: bold; color: white;">{{ precio }}</span>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px; padding-top: 10px; border-top: 1px solid #ccc;">
+            <p style="font-weight: bold; margin-bottom: 10px;color: white;">Acciones</p>
+            <button (click)="procesar()" style="padding: 5px 10px; margin-right: 10px;">Procesar</button>
+            <button (click)="salir()" style="padding: 5px 10px;">Salir</button>
+        </div>

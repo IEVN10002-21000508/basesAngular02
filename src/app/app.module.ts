@@ -4,15 +4,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesListComponent } from './heroes/heroes-list/heroes-list.component';
+import { FormsModule } from '@angular/forms';
+import { HeroesFilterPipe } from './heroes/heroes-filter.pipe';
+import { OperasBasComponent } from './fomularios/operas-bas/operas-bas.component';
+import { CinepolisComponent } from './cinepolis/cinepolis.component';
+import { ResistenciasComponent } from './resistencias/resistencias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesListComponent
+    HeroesListComponent,
+    HeroesFilterPipe,
+    OperasBasComponent,
+    CinepolisComponent,
+    ResistenciasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

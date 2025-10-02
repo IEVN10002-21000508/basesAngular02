@@ -22,36 +22,4 @@ export class AppComponent {
 }
 
 
-export class HeroesListComponent{
-heroes:any[]=[
-  {
-    "imagen":"https://dragonball-api.com/transformaciones/goku_ssj2.webp",
-    nombre: "goku",
-    descripcion :"kakaroto",
-    race:"Saiyan",
-    ki:9000
-  },
 
-  {
-    "imagen":"https://dragonball-api.com/api/characters/1",
-    nombre: "Vegeta",
-    descripcion :"Principe de los Saiyan",
-    race:"Saiyan",
-    ki:8500
-  },
-  {
-    "imagen":"https://dragonball-api.com/api/characters/1",
-    nombre: "Piccolo",
-    descripcion :"Guerrero Namekiano",
-    race:"Namekiano",
-    ki:700
-  },
-  {
-    "imagen":"https://dragonball-api.com/api/characters/1",
-    nombre: "goku",
-    descripcion :"kakaroto",
-    race:"Saiyan",
-    ki:9000
-  },
-]
-}
